@@ -92,12 +92,12 @@ class Tasks:
                 print('There is nothing in the list match your query!')
 
     def report(self):
-        print('\nID   Age  Due Date   Priority   Task                     Created                       Completed')
-        print('--   ---  --------   --------   ----                     ---------------------------   -------------------------')
+        print('\nID   Age  Due Date   Priority   Task                                                        Created                       Completed')
+        print('--   ---  --------   --------   ----                                                        ---------------------------   -------------------------')
         for i in self.tasks:
             # age
             delta = datetime.now() - datetime.strptime(i.create_date, "%a %b %d %H:%M:%S %Z %Y")
-            print("{id:<5}{age}d   {due_date:<11}{priority:<11}{task:<25}{create:<30}{complete}".format(id=i.unique_id, age=delta.days, due_date=i.due_date, priority=i.priority, task=i.name, create=i.create_date, complete=i.complete_date))
+            print("{id:<5}{age}d   {due_date:<11}{priority:<11}{task:<60}{create:<30}{complete}".format(id=i.unique_id, age=delta.days, due_date=i.due_date, priority=i.priority, task=i.name, create=i.create_date, complete=i.complete_date))
 
     def done(self, id):
         if [x for x in self.tasks if x.unique_id == id] == []: # check whether the target task is in the list or not
