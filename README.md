@@ -1,4 +1,4 @@
-# Command Line Task Manager
+<h1 align="center">Command Line Task Manager</h1>
 
 
 ## About
